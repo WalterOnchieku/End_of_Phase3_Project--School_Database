@@ -6,11 +6,13 @@ def display_menu():
     print("\033[92m" + "="*40)  # End color
     print("1. View all students")
     print("2. Add new student")
-    print("3. View all teachers")
-    print("4. Add new teacher")
-    print("5. View student scores")
-    print("6. View student grades")
-    print("7. Exit\033[0m")  # End color (reset)
+    print("3. Delete student")
+    print("4. View all teachers")
+    print("5. Add new teacher")
+    print("6. Delete teacher")
+    print("7. View student scores")
+    print("8. View student grades")
+    print("9. Exit\033[0m")  # End color (reset)
     print("\033[92m" + "="*40 + "\033[0m")  # Green color end
     
 #main function
@@ -22,16 +24,20 @@ def main():
         if choice == "1":
             view_students()
         elif choice == "2":
-            add_students()
+            add_student()
         elif choice == "3":
-            view_teachers()
+            delete_student()
         elif choice == "4":
-            add_teachers()
+            view_teachers()
         elif choice == "5":
-            view_student_scores()
+            add_teacher()
         elif choice == "6":
-            view_student_grades()
+            delete_teacher()
         elif choice == "7":
+            view_student_scores()
+        elif choice == "8":
+            view_student_grades()
+        elif choice == "9":
             print("Exiting the program. Goodbye!!")
             break
         else:

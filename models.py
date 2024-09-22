@@ -14,6 +14,7 @@ class Student(Base):
     last_name = Column(String)
     date_of_birth = Column(String)
     gender = Column(String)
+    date_of_admission = Column(String)
     class_id = Column(Integer, ForeignKey("classes.id"))  # foreign key to class table
 
     # Relationship to access the student's class
@@ -33,6 +34,7 @@ class Teacher(Base):
     id = Column(Integer, primary_key=True)
     first_name = Column(String)
     last_name = Column(String)
+    date_of_admission = Column(String)
     subject_id = Column(Integer, ForeignKey("subjects.id"))  # foreign key to subjects table
 
     # Relationship to access the teacher's subject
