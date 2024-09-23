@@ -95,7 +95,8 @@ Error handling is implemented to catch and handle various exceptions, ensuring s
 Invalid Input:
 
 If the user enters an invalid input (e.g., a non-numeric student ID), an error message is displayed, and the program will prompt the user again.
-Database Errors:
+
+#Database Errors:
 
 SQLAlchemy exceptions are caught, and appropriate messages are shown when database operations fail (e.g., adding a duplicate student or teacher).
 Graceful Rollbacks:

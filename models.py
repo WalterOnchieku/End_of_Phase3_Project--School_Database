@@ -6,6 +6,8 @@ engine = create_engine(db_url)
 
 Base = declarative_base()
 
+"""****************************************************************************"""
+
 # create student table
 class Student(Base):
     __tablename__ = "students"
@@ -27,6 +29,7 @@ class Student(Base):
     def __repr__(self):
         return f"<Student(id={self.id}, name={self.first_name} {self.last_name}, class={self.student_class.class_name})>"
 
+"""****************************************************************************"""
 
 # create teachers table
 class Teacher(Base):
@@ -45,6 +48,7 @@ class Teacher(Base):
     def __repr__(self):
         return f"<Teacher(id={self.id}, name={self.first_name} {self.last_name}, subject_id={self.subject_id})>"
 
+"""****************************************************************************"""
 
 # create classes table
 class Class(Base):
@@ -61,7 +65,7 @@ class Class(Base):
     def __repr__(self):
         return f"<Class(id={self.id}, class_name={self.class_name})>"
 
-
+"""****************************************************************************"""
 
 # create subjects table
 class Subject(Base):
@@ -79,6 +83,7 @@ class Subject(Base):
     def __repr__(self):
         return f"<Subject(id={self.id}, subject_name={self.subject_name})>"
 
+"""****************************************************************************"""
 
 # create scores table
 class Score(Base):
@@ -97,6 +102,7 @@ class Score(Base):
     def __repr__(self):
         return f"<Score(id={self.id}, student_id={self.student_id}, subject_id={self.subject_id}, score={self.score}/{self.max_score})>"
 
+"""****************************************************************************"""
 
 # create grades table
 class Grade(Base):
@@ -114,6 +120,7 @@ class Grade(Base):
     def __repr__(self):
         return f"<Grade(id={self.id}, student_id={self.student_id}, subject_id={self.subject_id}, grade={self.grade})>"
 
+"""****************************************************************************"""
 
 # Create tables in the database
 Base.metadata.create_all(engine)

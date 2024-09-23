@@ -6,10 +6,13 @@ from models import Student, Teacher, Class, Score, Grade, engine
 Session = sessionmaker(bind=engine)
 session = Session()
 
-# Function to view all students with error handling
+"""*****************************************************************************************"""
+
+# Function to view all students
 def view_students():
     try:
         students = session.query(Student).all()
+        #return this if students table empty
         if not students:
             print("\n  No students found in the database.")
             return
@@ -24,15 +27,17 @@ def view_students():
             student_list.append(student_info)  # Add tuple to list
             print(f"ID: {student.id}, Name: {student.first_name} {student.last_name}, Class: {student.student_class.class_name}, Date of Admission: {student.date_of_admission}")
 
-        # Output example for tuples and list
+        # Output example as tuples and list
         print("\n--- Students as a List of Tuples ---")
         print(student_list)
-
+        # Output example  as dictionary
         print("\n--- Students as a Dictionary ---")
         print(students_dict)
 
     except SQLAlchemyError as e:
         print(f" An error occurred while fetching students: {e}")
+
+"""****************************************************************************"""
 
 # Function to add a new student with error handling
 def add_student():
@@ -66,6 +71,8 @@ def add_student():
         print(f" An error occurred while adding the student: {e}")
         session.rollback()
 
+"""****************************************************************************"""
+
 # Function to delete a student by ID with error handling
 def delete_student():
     try:
@@ -85,6 +92,8 @@ def delete_student():
     except SQLAlchemyError as e:
         print(f" An error occurred while deleting the student: {e}")
         session.rollback()
+
+"""****************************************************************************"""
 
 # Function to view all teachers with error handling
 def view_teachers():
@@ -108,6 +117,8 @@ def view_teachers():
 
     except SQLAlchemyError as e:
         print(f" An error occurred while fetching teachers: {e}")
+
+"""****************************************************************************"""
 
 # Function to add a new teacher with error handling
 def add_teacher():
@@ -133,6 +144,8 @@ def add_teacher():
         print(f" An error occurred while adding the teacher: {e}")
         session.rollback()
 
+"""****************************************************************************"""       
+
 # Function to delete a teacher by ID with error handling
 def delete_teacher():
     try:
@@ -152,6 +165,8 @@ def delete_teacher():
     except SQLAlchemyError as e:
         print(f" An error occurred while deleting the teacher: {e}")
         session.rollback()
+
+"""****************************************************************************"""        
 
 # Function to view student grades with error handling
 def view_student_grades():
@@ -182,6 +197,8 @@ def view_student_grades():
         print(f" Invalid input: {ve}")
     except SQLAlchemyError as e:
         print(f" An error occurred while fetching grades: {e}")
+
+"""****************************************************************************"""
 
 # Function to view student scores with error handling
 def view_student_scores():

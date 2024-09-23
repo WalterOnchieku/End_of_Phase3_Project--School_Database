@@ -1,4 +1,4 @@
-from helper import view_students, add_student, view_teachers, add_teacher, view_student_grades, view_student_scores
+from helper import view_students, add_student, delete_student, view_teachers, add_teacher, delete_teacher, view_student_grades, view_student_scores
 
 def display_menu():
     print("\033[92m" + "\n" + "="*40)  # Green color start
